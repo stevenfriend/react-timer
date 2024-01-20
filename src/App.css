@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.timer {
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.digit {
+  margin: 0 .2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.digit-controls {
+  display: flex;
+  justify-content: center;
+  opacity: .1;
+  transition: all .2s ease-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.digit-controls:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.digit-controls.disabled {
+  opacity: 0;
+  cursor: default;
+  transform: translateY(.5rem);
+}
+
+.digit-controls.disabled.inc {
+  transform: translateY(.5rem);
+}
+
+.digit-controls.disabled.dec {
+  transform: translateY(-.5rem);
+}
+
+.timer-controls {
+  margin: 1.5rem;
+  width: 6rem;
+  aspect-ratio : 1 / 1;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: .08rem .08rem 0 white;
+  opacity: .75;
+  transition: all .2s ease-in-out;
+}
+
+.timer-controls.reset {
+  background-color: rgb(152, 122, 203);
+}
+  
+.timer-controls.stop {
+  background-color: rgb(190, 74, 74);
+}
+
+.timer-controls.start {
+  background-color: rgb(0, 190, 190);
+}
+
+.timer-controls.pause {
+  background-color: rgb(220, 176, 88);
+}
+
+.timer-controls.enabled:hover {
+  opacity: 1;
+}
+
+.timer-controls.disabled {
+  background-color: rgb(200, 200, 200);
 }
